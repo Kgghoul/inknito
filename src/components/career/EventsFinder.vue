@@ -3,7 +3,7 @@
     <div class="section-header">
       <div class="section-title-group">
         <div class="section-icon-wrapper">
-          <img src="/event-svgrepo-com.svg" class="section-icon" alt="Events" />
+          <img :src="base + 'event-svgrepo-com.svg'" class="section-icon" alt="Events" />
         </div>
         <div>
           <h2>Professional Events</h2>
@@ -152,6 +152,8 @@
 
 <script setup>
 import { ref } from 'vue'
+
+const base = import.meta.env.BASE_URL
 
 const eventsProfileComplete = ref(false)
 const eventsProfile = ref({

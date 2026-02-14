@@ -27,14 +27,16 @@
 
 <script setup>
 import { ref } from 'vue'
+
+const base = import.meta.env.BASE_URL
 import EventsFinder from './career/EventsFinder.vue'
 import ResumeBuilder from './career/ResumeBuilder.vue'
 import InterviewPractice from './career/InterviewPractice.vue'
 
 const tabs = [
-  { id: 'events', name: 'Professional Events', icon: '/find-location-svgrepo-com.svg' },
-  { id: 'resume', name: 'Resume Builder', icon: '/clipboard-research-investigate-study-svgrepo-com.svg' },
-  { id: 'interview', name: 'Interview Practice', icon: '/study-svgrepo-com.svg' }
+  { id: 'events', name: 'Professional Events', icon: base + 'find-location-svgrepo-com.svg' },
+  { id: 'resume', name: 'Resume Builder', icon: base + 'clipboard-research-investigate-study-svgrepo-com.svg' },
+  { id: 'interview', name: 'Interview Practice', icon: base + 'study-svgrepo-com.svg' }
 ]
 
 const activeTab = ref('events')

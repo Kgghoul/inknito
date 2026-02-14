@@ -2,7 +2,7 @@
   <div class="testing-mode">
     <div v-if="!currentTest" class="test-setup">
       <h2>
-        <img src="/study-svgrepo-com.svg" class="testing-icon" alt="Test" />
+        <img :src="base + 'study-svgrepo-com.svg'" class="testing-icon" alt="Test" />
         Generate a Test
       </h2>
       <p>AI will create personalized questions based on "{{ book.customName || book.name }}"</p>
@@ -150,6 +150,8 @@
 
 <script setup>
 import { ref } from 'vue'
+
+const base = import.meta.env.BASE_URL
 
 const props = defineProps({
   book: {

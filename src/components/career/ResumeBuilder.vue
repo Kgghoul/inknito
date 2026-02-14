@@ -7,10 +7,10 @@
       </div>
       <transition-group name="btn-fade" tag="div" class="header-actions">
          <button v-if="resumeData.sections.length > 0 || resumeData.name" key="analyze" @click="analyzeResume" class="btn-secondary">
-          <img src="/analyze-svgrepo-com.svg" alt="Analyze" class="btn-icon" /> Analyze
+          <img :src="base + 'analyze-svgrepo-com.svg'" alt="Analyze" class="btn-icon" /> Analyze
         </button>
         <button v-if="resumeData.sections.length > 0 || resumeData.name" key="download" @click="downloadResume" class="btn-primary">
-          <img src="/download-svgrepo-com.svg" alt="Download" class="btn-icon" /> Download PDF
+          <img :src="base + 'download-svgrepo-com.svg'" alt="Download" class="btn-icon" /> Download PDF
         </button>
       </transition-group>
     </div>
@@ -213,6 +213,8 @@
 
 <script setup>
 import { ref } from 'vue'
+
+const base = import.meta.env.BASE_URL
 
 const resumeData = ref({
   name: '',

@@ -12,7 +12,7 @@
         <div class="section-header">
           <div class="section-title-group">
             <div class="section-icon-wrapper chat-icon-wrapper">
-              <img src="/safe-shield-svgrepo-com.svg" class="section-icon" alt="Chat" />
+              <img :src="base + 'safe-shield-svgrepo-com.svg'" class="section-icon" alt="Chat" />
             </div>
             <div>
               <h2>Anonymous Support Chat</h2>
@@ -63,7 +63,7 @@
         <div class="section-header">
           <div class="section-title-group">
             <div class="section-icon-wrapper finder-icon-wrapper">
-              <img src="/find-location-svgrepo-com.svg" class="section-icon" alt="Friends" />
+              <img :src="base + 'find-location-svgrepo-com.svg'" class="section-icon" alt="Friends" />
             </div>
             <div>
               <h2>Find Study Buddies</h2>
@@ -79,7 +79,7 @@
         <div v-if="!friendFinderEnabled" class="disabled-state">
           <div class="disabled-content">
             <div class="disabled-icon-wrapper">
-              <img src="/find-location-svgrepo-com.svg" class="disabled-icon" alt="Disabled" />
+              <img :src="base + 'find-location-svgrepo-com.svg'" class="disabled-icon" alt="Disabled" />
             </div>
             <h3>Friend Finder is Off</h3>
             <p>Toggle the switch above to start connecting with other students</p>
@@ -188,6 +188,8 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+
+const base = import.meta.env.BASE_URL
 import ChatWindow from './ChatWindow.vue'
 
 const topics = ['Academic Stress', 'Anxiety', 'Relationships', 'Work-Life Balance', 'Motivation', 'General Support']

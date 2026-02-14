@@ -20,7 +20,7 @@
 
         <div class="book-badge">
           <div class="badge-icon-wrapper">
-            <img src="/book-heart-love-svgrepo-com.svg" class="badge-icon" alt="Book" />
+            <img :src="base + 'book-heart-love-svgrepo-com.svg'" class="badge-icon" alt="Book" />
           </div>
           <span class="badge-text">{{ truncateBookName(selectedBook.customName || selectedBook.name) }}</span>
         </div>
@@ -30,14 +30,14 @@
             :class="['mode-btn', { active: mode === 'study' }]"
             @click="mode = 'study'"
           >
-            <img src="/book-heart-love-svgrepo-com.svg" class="mode-svg-icon" alt="Study" />
+            <img :src="base + 'book-heart-love-svgrepo-com.svg'" class="mode-svg-icon" alt="Study" />
             <span class="mode-label">Study</span>
           </button>
           <button 
             :class="['mode-btn', { active: mode === 'test' }]"
             @click="mode = 'test'"
           >
-            <img src="/study-svgrepo-com.svg" class="mode-svg-icon" alt="Test" />
+            <img :src="base + 'study-svgrepo-com.svg'" class="mode-svg-icon" alt="Test" />
             <span class="mode-label">Test</span>
           </button>
         </div>
@@ -53,6 +53,8 @@
 
 <script setup>
 import { ref } from 'vue'
+
+const base = import.meta.env.BASE_URL
 import BookLibrary from './academic/BookLibrary.vue'
 import StudyMode from './academic/StudyMode.vue'
 import TestingMode from './academic/TestingMode.vue'

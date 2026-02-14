@@ -16,7 +16,7 @@
         :class="['message', message.sender]"
       >
         <div class="avatar" v-if="message.sender !== 'user'">
-          <img src="/teacher-svgrepo-com.svg" class="avatar-icon" alt="AI" />
+          <img :src="base + 'teacher-svgrepo-com.svg'" class="avatar-icon" alt="AI" />
         </div>
         <div class="message-content">
           <span class="msg-label" v-if="message.sender === 'user'">You</span>
@@ -33,7 +33,7 @@
 
       <div v-if="isLoading" :class="['message', botClass]">
         <div class="avatar">
-          <img src="/teacher-svgrepo-com.svg" class="avatar-icon" alt="AI" />
+          <img :src="base + 'teacher-svgrepo-com.svg'" class="avatar-icon" alt="AI" />
         </div>
         <div class="message-content">
           <span class="msg-label">{{ botLabel }}</span>
@@ -55,7 +55,7 @@
           @input="autoResize"
         ></textarea>
         <button @click="handleSend" class="btn-send" :disabled="!inputText.trim() || isLoading">
-          <img src="/send-alt-1-svgrepo-com.svg" class="send-icon" alt="Send" />
+          <img :src="base + 'send-alt-1-svgrepo-com.svg'" class="send-icon" alt="Send" />
         </button>
       </div>
     </div>
@@ -64,6 +64,8 @@
 
 <script setup>
 import { ref, nextTick } from 'vue'
+
+const base = import.meta.env.BASE_URL
 
 const props = defineProps({
   messages: {

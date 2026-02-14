@@ -5,9 +5,9 @@
       <div class="header-bg"></div>
       <div class="header-content">
         <div class="avatar-container">
-          <img src="/person-svgrepo-com.svg" alt="User Avatar" class="avatar" />
+          <img :src="base + 'person-svgrepo-com.svg'" alt="User Avatar" class="avatar" />
           <button class="edit-avatar-btn">
-            <img src="/photo-9-svgrepo-com.svg" alt="Edit" class="icon-img" />
+            <img :src="base + 'photo-9-svgrepo-com.svg'" alt="Edit" class="icon-img" />
           </button>
         </div>
         <div class="user-info">
@@ -40,7 +40,7 @@
         <!-- Personal Info Tab -->
         <div v-if="activeTab === 'info'" class="content-section">
           <h2>
-            <img src="/person-svgrepo-com.svg" class="section-icon" alt="" />
+            <img :src="base + 'person-svgrepo-com.svg'" class="section-icon" alt="" />
             Personal Information
           </h2>
           <div class="form-card">
@@ -79,27 +79,27 @@
         <!-- Statistics Tab -->
         <div v-if="activeTab === 'stats'" class="content-section">
           <h2>
-             <img src="/statistics-graph-stats-analytics-business-data-svgrepo-com.svg" class="section-icon" alt="" />
+             <img :src="base + 'statistics-graph-stats-analytics-business-data-svgrepo-com.svg'" class="section-icon" alt="" />
              Your Progress
           </h2>
           <div class="stats-grid">
             <div class="stat-card blue">
-              <div class="stat-icon"><img src="/time-svgrepo-com.svg" alt="Study Hours" class="stat-svg" /></div>
+              <div class="stat-icon"><img :src="base + 'time-svgrepo-com.svg'" alt="Study Hours" class="stat-svg" /></div>
               <div class="stat-value">124</div>
               <div class="stat-label">Study Hours</div>
             </div>
             <div class="stat-card purple">
-              <div class="stat-icon"><img src="/target-arrow-svgrepo-com.svg" alt="Avg Grade" class="stat-svg" /></div>
+              <div class="stat-icon"><img :src="base + 'target-arrow-svgrepo-com.svg'" alt="Avg Grade" class="stat-svg" /></div>
               <div class="stat-value">85%</div>
               <div class="stat-label">Avg. Grade</div>
             </div>
             <div class="stat-card green">
-              <div class="stat-icon"><img src="/event-svgrepo-com.svg" alt="Events" class="stat-svg" /></div>
+              <div class="stat-icon"><img :src="base + 'event-svgrepo-com.svg'" alt="Events" class="stat-svg" /></div>
               <div class="stat-value">12</div>
               <div class="stat-label">Events Attended</div>
             </div>
             <div class="stat-card orange">
-              <div class="stat-icon"><img src="/fire-svgrepo-com.svg" alt="Streak" class="stat-svg" /></div>
+              <div class="stat-icon"><img :src="base + 'fire-svgrepo-com.svg'" alt="Streak" class="stat-svg" /></div>
               <div class="stat-value">5</div>
               <div class="stat-label">Current Streak</div>
             </div>
@@ -123,7 +123,7 @@
         <!-- Settings Tab -->
         <div v-if="activeTab === 'settings'" class="content-section">
           <h2>
-            <img src="/settings-1390-svgrepo-com.svg" class="section-icon" alt="" />
+            <img :src="base + 'settings-1390-svgrepo-com.svg'" class="section-icon" alt="" />
             Account Settings
           </h2>
           <div class="settings-group">
@@ -177,12 +177,14 @@
 <script setup>
 import { ref } from 'vue'
 
+const base = import.meta.env.BASE_URL
+
 const activeTab = ref('info')
 
 const tabs = [
-  { id: 'info', name: 'Personal Info', icon: '/person-svgrepo-com.svg' },
-  { id: 'stats', name: 'Statistics', icon: '/statistics-graph-stats-analytics-business-data-svgrepo-com.svg' },
-  { id: 'settings', name: 'Settings', icon: '/settings-1390-svgrepo-com.svg' }
+  { id: 'info', name: 'Personal Info', icon: base + 'person-svgrepo-com.svg' },
+  { id: 'stats', name: 'Statistics', icon: base + 'statistics-graph-stats-analytics-business-data-svgrepo-com.svg' },
+  { id: 'settings', name: 'Settings', icon: base + 'settings-1390-svgrepo-com.svg' }
 ]
 
 const userProfile = ref({

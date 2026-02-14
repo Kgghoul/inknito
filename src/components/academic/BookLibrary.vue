@@ -31,7 +31,7 @@
           :key="book.id" 
           class="book-card"
         >
-          <img src="/book-heart-love-svgrepo-com.svg" class="book-icon" alt="Book icon" />
+          <img :src="base + 'book-heart-love-svgrepo-com.svg'" class="book-icon" alt="Book icon" />
           <div v-if="editingBookId === book.id" class="book-name-edit">
             <input 
               v-model="editingBookName" 
@@ -65,6 +65,8 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+
+const base = import.meta.env.BASE_URL
 
 const emit = defineEmits(['select-book'])
 

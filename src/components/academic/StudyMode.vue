@@ -7,7 +7,7 @@
       placeholder="Ask a question about this book..."
       welcome-title="Welcome to Study Mode!"
       :welcome-subtitle="`Ask me anything about \u0022${book.customName || book.name}\u0022`"
-      :welcome-icon="'/book-heart-love-svgrepo-com.svg'"
+      :welcome-icon="base + 'book-heart-love-svgrepo-com.svg'"
       bot-label="AI Tutor"
       bot-class="ai"
       @send="askQuestion"
@@ -35,6 +35,8 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+
+const base = import.meta.env.BASE_URL
 import ChatWindow from '../ChatWindow.vue'
 
 const props = defineProps({
