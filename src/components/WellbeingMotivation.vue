@@ -35,7 +35,7 @@
           placeholder="Share what's on your mind... (completely anonymous)"
           welcome-title="Welcome to Your Safe Space"
           welcome-subtitle="This is a judgment-free zone. Share what's on your mind."
-          welcome-icon="/safe-shield-svgrepo-com.svg"
+          :welcome-icon="base + 'safe-shield-svgrepo-com.svg'"
           bot-label="Support Bot"
           bot-class="bot"
           @send="sendMessage"
