@@ -5,10 +5,10 @@
       <p class="subtitle">AI-powered learning tools for better grades</p>
     </div>
 
-    <!-- Book Library (shown when no book selected) -->
+    <!-- when no book selected -->
     <BookLibrary v-if="!selectedBook" @select-book="selectBook" />
 
-    <!-- Learning Interface (shown when book is selected) -->
+    <!-- when book is selected -->
     <div v-else class="learning-interface">
       <div class="current-book-header">
         <button @click="selectedBook = null" class="btn-back">
@@ -129,7 +129,6 @@ const truncateBookName = (name) => {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-/* Back Button */
 .btn-back {
   display: flex;
   align-items: center;
@@ -152,7 +151,6 @@ const truncateBookName = (name) => {
   color: #ffffff;
 }
 
-/* Book Badge */
 .book-badge {
   display: flex;
   align-items: center;
@@ -191,7 +189,6 @@ const truncateBookName = (name) => {
   text-overflow: ellipsis;
 }
 
-/* Mode Selector */
 .mode-selector {
   display: flex;
   gap: 0.4rem;
@@ -248,7 +245,6 @@ const truncateBookName = (name) => {
   font-size: 0.9rem;
 }
 
-/* Transition */
 .mode-fade-enter-active,
 .mode-fade-leave-active {
   transition: opacity 0.2s ease, transform 0.2s ease;
