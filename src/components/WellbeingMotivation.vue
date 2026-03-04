@@ -5,9 +5,8 @@
       <p class="subtitle">Your mental health and connections matter</p>
     </div>
 
-    <!-- Main Content -->
     <div class="content-grid">
-      <!-- Anonymous Chat Bot -->
+      <!-- Bot -->
       <div class="section anonymous-chat">
         <div class="section-header">
           <div class="section-title-group">
@@ -58,7 +57,7 @@
         </ChatWindow>
       </div>
 
-      <!-- Friend Finder -->
+      <!-- Finder -->
       <div class="section friend-finder">
         <div class="section-header">
           <div class="section-title-group">
@@ -87,7 +86,7 @@
         </div>
 
         <div v-else class="friend-finder-content">
-          <!-- Profile Setup -->
+          <!-- Profile -->
           <div v-if="!profileComplete" class="profile-setup">
             <div class="setup-header">
               <h3>Complete Your Profile</h3>
@@ -135,7 +134,7 @@
             </button>
           </div>
 
-          <!-- Friend List -->
+          <!-- List -->
           <div v-else class="friends-list">
             <div class="filter-bar">
               <div class="search-wrapper">
@@ -194,12 +193,10 @@ import ChatWindow from './ChatWindow.vue'
 
 const topics = ['Academic Stress', 'Anxiety', 'Relationships', 'Work-Life Balance', 'Motivation', 'General Support']
 
-// Chat State
 const chatMessages = ref([])
 const isLoading = ref(false)
 const chatWindowRef = ref(null)
 
-// Friend Finder State
 const friendFinderEnabled = ref(false)
 const profileComplete = ref(false)
 const searchQuery = ref('')
@@ -209,17 +206,15 @@ const userProfile = ref({
   goals: ''
 })
 
-// Mock Friends Data
 const friends = ref([
-  { id: 1, name: 'Alex M.', avatar: '👨‍💻', university: 'MIT', interests: ['Computer Science', 'AI', 'Gaming'] },
-  { id: 2, name: 'Sarah K.', avatar: '👩‍🔬', university: 'Stanford', interests: ['Biology', 'Research', 'Yoga'] },
-  { id: 3, name: 'James L.', avatar: '👨‍🎓', university: 'Harvard', interests: ['Business', 'Entrepreneurship', 'Sports'] },
-  { id: 4, name: 'Emily R.', avatar: '👩‍💼', university: 'MIT', interests: ['Engineering', 'Robotics', 'Music'] },
-  { id: 5, name: 'Michael T.', avatar: '👨‍🏫', university: 'Yale', interests: ['Literature', 'Writing', 'Photography'] },
-  { id: 6, name: 'Lisa W.', avatar: '👩‍🎨', university: 'Stanford', interests: ['Design', 'Art', 'Travel'] }
+  { id: 1, name: 'Alex M.', avatar: '', university: 'MIT', interests: ['Computer Science', 'AI', 'Gaming'] },
+  { id: 2, name: 'Sarah K.', avatar: '', university: 'Stanford', interests: ['Biology', 'Research', 'Yoga'] },
+  { id: 3, name: 'James L.', avatar: '', university: 'Harvard', interests: ['Business', 'Entrepreneurship', 'Sports'] },
+  { id: 4, name: 'Emily R.', avatar: '', university: 'MIT', interests: ['Engineering', 'Robotics', 'Music'] },
+  { id: 5, name: 'Michael T.', avatar: '', university: 'Yale', interests: ['Literature', 'Writing', 'Photography'] },
+  { id: 6, name: 'Lisa W.', avatar: '', university: 'Stanford', interests: ['Design', 'Art', 'Travel'] }
 ])
 
-// Chat Functions
 const sendMessage = (messageText) => {
   chatMessages.value.push({
     sender: 'user',
@@ -251,10 +246,9 @@ const generateSupportResponse = (question) => {
   return responses[Math.floor(Math.random() * responses.length)]
 }
 
-// Friend Finder Functions
 const toggleFriendFinder = () => {
   if (friendFinderEnabled.value && !profileComplete.value) {
-    // Keep it enabled to show profile setup
+
   }
 }
 
@@ -312,7 +306,6 @@ const connectFriend = (friend) => {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* Content Grid */
 .content-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
@@ -321,7 +314,6 @@ const connectFriend = (friend) => {
   overflow: hidden;
 }
 
-/* Section Cards */
 .section {
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.06) 100%);
   backdrop-filter: blur(24px);
@@ -334,7 +326,6 @@ const connectFriend = (friend) => {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
 }
 
-/* Section Header */
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -391,7 +382,6 @@ const connectFriend = (friend) => {
   margin: 0.15rem 0 0;
 }
 
-/* Anonymous Badge */
 .anonymous-badge {
   background: rgba(16, 185, 129, 0.15);
   color: #34d399;
@@ -407,7 +397,6 @@ const connectFriend = (friend) => {
   letter-spacing: 0.3px;
 }
 
-/* Chat Topics (welcome chips) */
 .chat-topics {
   margin-top: 1rem;
   text-align: center;
@@ -451,7 +440,6 @@ const connectFriend = (friend) => {
   color: #ffffff;
 }
 
-/* Toggle Switch */
 .toggle-switch {
   position: relative;
   display: inline-block;
@@ -502,7 +490,6 @@ input:checked + .toggle-slider:before {
   transform: translateX(22px);
 }
 
-/* Disabled State */
 .disabled-state {
   flex: 1;
   display: flex;
@@ -545,7 +532,6 @@ input:checked + .toggle-slider:before {
   font-size: 0.88rem;
 }
 
-/* Friend Finder Content */
 .friend-finder-content {
   flex: 1;
   display: flex;
@@ -553,7 +539,6 @@ input:checked + .toggle-slider:before {
   overflow: hidden;
 }
 
-/* Profile Setup */
 .profile-setup {
   flex: 1;
   overflow-y: auto;
@@ -786,7 +771,6 @@ textarea.form-input {
   font-size: 0.9rem;
 }
 
-/* Responsive */
 @media (max-width: 1200px) {
   .content-grid {
     grid-template-columns: 1fr;
