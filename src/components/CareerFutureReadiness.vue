@@ -5,7 +5,7 @@
       <p class="subtitle">Build your professional future with confidence</p>
     </div>
 
-    <!-- Main Tabs -->
+    <!-- Main  -->
     <div class="tabs-container">
       <button 
         v-for="tab in tabs" 
@@ -18,7 +18,7 @@
       </button>
     </div>
 
-    <!-- Tab Content -->
+    <!--  Content -->
     <EventsFinder v-if="activeTab === 'events'" />
     <ResumeBuilder v-else-if="activeTab === 'resume'" />
     <InterviewPractice v-else-if="activeTab === 'interview'" />
