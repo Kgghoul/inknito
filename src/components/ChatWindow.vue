@@ -289,7 +289,6 @@ defineExpose({ scrollToBottom })
   margin: 0;
 }
 
-/* Typing */
 .typing-indicator {
   display: flex;
   gap: 0.35rem;
