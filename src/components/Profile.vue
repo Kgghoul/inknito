@@ -1,6 +1,5 @@
 <template>
   <div class="profile-container">
-    <!-- Header -->
     <div class="profile-header">
       <div class="header-bg"></div>
       <div class="header-content">
@@ -21,7 +20,6 @@
     </div>
 
     <div class="profile-body">
-      <!-- Sidebar Navigation -->
       <div class="profile-sidebar">
         <button 
           v-for="tab in tabs" 
@@ -33,11 +31,8 @@
           {{ tab.name }}
         </button>
       </div>
-
-      <!-- Main Content Area -->
       <div class="profile-content">
         
-        <!-- Personal Info Tab -->
         <div v-if="activeTab === 'info'" class="content-section">
           <h2>
             <img :src="base + 'person-svgrepo-com.svg'" class="section-icon" alt="" />
@@ -76,7 +71,6 @@
           </div>
         </div>
 
-        <!-- Statistics Tab -->
         <div v-if="activeTab === 'stats'" class="content-section">
           <h2>
              <img :src="base + 'statistics-graph-stats-analytics-business-data-svgrepo-com.svg'" class="section-icon" alt="" />
@@ -119,8 +113,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Settings Tab -->
         <div v-if="activeTab === 'settings'" class="content-section">
           <h2>
             <img :src="base + 'settings-1390-svgrepo-com.svg'" class="section-icon" alt="" />
@@ -672,7 +664,6 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .profile-body {
     flex-direction: column;
