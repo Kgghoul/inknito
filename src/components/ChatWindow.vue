@@ -203,7 +203,6 @@ defineExpose({ scrollToBottom })
   margin-bottom: 0.5rem;
 }
 
-/* Messages */
 .message {
   display: flex;
   align-items: flex-start;
@@ -306,7 +305,6 @@ defineExpose({ scrollToBottom })
 .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
 .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
 
-/* Input Area */
 .input-area {
   padding: 0.75rem 1rem;
   background: rgba(255, 255, 255, 0.08);
