@@ -100,7 +100,6 @@ body {
   background: url('/academicsuccessbg.jpeg') center/cover no-repeat fixed;
 }
 
-/* Header */
 .main-header {
   position: relative;
   z-index: 10;
@@ -186,7 +185,6 @@ body {
 }
 }
 
-/* Main Content */
 .main-content {
   flex: 1;
   overflow: hidden;
@@ -219,7 +217,6 @@ body {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .header-content {
     padding: 0.5rem 1rem;
