@@ -180,12 +180,12 @@ const tabs = [
 ]
 
 const userProfile = ref({
-  name: 'Kassymkhanov Karim',
-  email: '8767YUYF@psba.edu.sg',
-  university: 'PSB Academy',
-  major: 'InfoComm Technology',
+  name: 'Name',
+  email: 'email@mail.com',
+  university: 'University name',
+  major: 'major',
   year: 2026,
-  studentId: '8767YUYF'
+  studentId: 'ID'
 })
 
 const settings = ref({
